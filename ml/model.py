@@ -125,9 +125,13 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
+
+    # Filter the data based on the slice value
+    sliced_data = data[data[column_name] == slice_value]
+
     # TODO: implement the function
     X_slice, y_slice, _, _ = process_data(
-        data,
+        sliced_data,
         categorical_features=categorical_features,
         label=label,
         encoder=encoder,
